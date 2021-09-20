@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        .wrapper {
+            background-color: #232629;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .radiation {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            let preloader = document.querySelector(".radiation"),
+                degree = 0,
+                start = Date.now();
+
+            let rotate = setInterval(() => {
+                preloader.style.transform = "rotate(" + degree++ + "deg)";
+
+                let stop = Date.now() - start;
+                if (stop >= 4000)
+                    clearInterval(rotate);
+            }, 5)
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img class="radiation" src="./img/qwerty.jpg" alt="">
+        <!-- <div class="container">
+            
+            <div class="circle">
+
+            </div>
+        </div> -->
+    </div>
+</body>
+
+</html>
